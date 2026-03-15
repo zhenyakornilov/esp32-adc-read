@@ -15,10 +15,10 @@ void loop()
   float voltageMv = analogReadMilliVolts(ADC_PIN);
   float voltageMvtoV = voltageMv / 1000;
   float diff = voltageMvtoV - calcVoltage;
-  Serial.println(rawValue);
-  Serial.println(calcVoltage);
-  Serial.println(voltageMv);
-  Serial.println(diff, 3);
+  Serial.println("RAW ADC Value: " + String(rawValue));
+  Serial.println("Calculated voltage: " + String(calcVoltage));
+  Serial.println("Calculated voltage with calibration: " + String(voltageMv));
+  Serial.println("Difference in millivolts: " + String(diff * 1000));
   Serial.println("==============================");
   delay(1000);
 }
